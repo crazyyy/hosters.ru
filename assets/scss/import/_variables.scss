@@ -1,7 +1,7 @@
 // Font Sizes
 $base-font-size: 16px;
 $em-base: $base-font-size;
-$font-family-base: 'Roboto Condensed', sans-serif;
+$font-family-base: 'Rubik', sans-serif;
 $heading-font-family: $font-family-base;
 
 // font weight
@@ -29,7 +29,9 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$orange: orange;
+$black: #1f1f1f;
+$black-light: #2a2a2a;
+$orange: #f98e3c;
 $red: red;
 $blue: #477dca;
 $gray-medium: #999;
@@ -37,8 +39,8 @@ $gray-dark: #333;
 $gray-light: #ddd;
 
 // Font Colors
-$base-font-color: $gray-dark;
-$action-color: $blue;
+$base-font-color: $black;
+$action-color: $orange;
 
 // Border
 $base-border-color: $gray-light;
