@@ -1,10 +1,17 @@
 <?php get_header(); ?>
   <article>
+    <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
 
-    <h1 class="cat-title inner-title"><?php the_category(', '); ?></h1>
-    <?php get_template_part('loop'); ?>
+    <h1 class="cat-title inner-title"><span><?php the_category(', '); ?></span></h1>
+
+    <div class="container">
+      <div class="row">
+        <?php get_template_part('loop'); ?>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
     <?php get_template_part('pagination'); ?>
-
   </article>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

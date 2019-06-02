@@ -42,7 +42,7 @@
             Валюта <span>RUB</span>
         </div>
         <div class="header--contact col-xl-2 col-lg-3 col-md-3 col-sm-3">
-          <a href="#">Напишите нам <i class="fa fa-envelope"></i></a>
+          <a href="/contacts">Напишите нам <i class="fa fa-envelope"></i></a>
         </div>
         <!-- /.header--contact col-xl-1 col-lg-2 col-md-2 col-sm-3 -->
       </div><!-- /.row -->

@@ -26,6 +26,11 @@ body {
   line-height: $base-line-height;
 
   -webkit-font-smoothing: antialiased;
+  &.home {
+    nav.header--nav {
+      margin-bottom: 50px;
+    }
+  }
 }
 
 h1,
@@ -97,13 +102,11 @@ picture {
 }
 
 header {
-
   .header--logo,
   .header--currency,
   .header--contact {
     height: 75px;
   }
-
   .header--logo,
   .header--logo a{
     display: block;
@@ -113,6 +116,9 @@ header {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    &:hover {
+      opacity: 0.8;
+    }
   }
   .header--title {
     width: 180px;
@@ -188,7 +194,7 @@ header {
 
 nav {
   &.header--nav {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 
     background-color: $black;
 
@@ -1574,12 +1580,204 @@ section {
 }
 
 article {
+  font-size: 15px;
+  line-height: 1.4;
+
   @extend .clearfix;
+  > * {
+    margin-bottom: 14px;
+  }
+  h1,h2,h3 {
+    font-weight: 700px;
+  }
+  h4,h5,h6 {
+    font-weight: 500px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  h4 {
+    font-size: 23px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  h6 {
+    font-size: 18px;
+  }
+  em {
+    text-decoration: underline;
+
+    font-style: italic;
+  }
+  hr {
+    border-color: lighten($orange, 25%);
+  }
+  blockquote {
+    padding: 5px 30px;
+
+    border-right: 5px solid $orange;
+    border-left: 5px solid $orange;
+    >* {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  ol,
+  ul {
+    padding-left: 30px;
+
+    list-style: none;
+    li {
+      &:before {
+        display: inline-block;
+
+        width: 1em;
+        margin-left: -1em;
+
+        color: $orange;
+      }
+    }
+  }
+  ol {
+    counter-reset: li;
+    li {
+      counter-increment: li;
+      &:before {
+        content: counter(li);
+      }
+    }
+  }
+  ul {
+    li {
+      &:before {
+        content: "\2022";
+
+        font-weight: bold;
+      }
+    }
+  }
+  table {
+    th {
+      color: $orange;
+      border-bottom: 1px solid lighten($orange, 20%);
+    }
+    td {
+      padding: 5px;
+      border-bottom: 1px solid lighten($orange, 25%);
+    }
+    tr {
+      &:nth-child(even) {
+        background-color: lighten($orange, 35%);
+      }
+    }
+  }
+  .breadcrumbs {
+    margin-bottom: 30px;
+    padding-left: 0;
+    li {
+      display: inline-block;
+
+      margin-right: 8px;
+
+      font-size: 13px;
+      &:before {
+        display: none;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .inner-title {
+    margin-bottom: 30px;
+
+    @extend .rookie--title;
+    a {
+      color: $black;
+    }
+  }
 }
 
 .looper {
   @extend .clearfix;
+  margin-bottom: 20px;
+	.feature-img {
+    float: left;
+    width: 25%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    overflow: hidden;
+		img {
+      width: 100%;
+		}
+	}
+	.inner-title {
+    text-align: left;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    font-size: 20px;
+		a {
+      color: $orange;
+      &:hover {
+        opacity: 0.8;
+      }
+		}
+	}
 }
+
+.pagination {
+  font-size: 18px;
+  @extend .clearfix;
+  text-align: center;
+  padding: 14px 0;
+  margin-bottom: 20px;
+  span, a {
+    display: inline-block;
+    padding: 3px 7px;
+    border-radius: 3px;
+    margin: 5px;
+    color: $black;
+    background-color: #f3f3f3;
+    &:hover {
+      background-color: darken(#f3f3f3, 20%);
+    }
+    &.next,
+    &.prev {
+      background-color: transparent;
+      &:hover {
+        text-decoration: underline;
+        background-color: transparent;
+      }
+    }
+    &.next {
+      float: right;
+      margin-right: 0;
+      padding-right: 0;
+    }
+    &.prev {
+      float: left;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    &.current {
+      color: $orange;
+      background-color: $black;
+      &:hover {
+        background-color: $black;
+      }
+    }
+  }
+}
+
 
 footer {
   height: $footer;

@@ -242,13 +242,13 @@ function wpeExcerpt($length_callback = '', $more_callback = '') {
 
 //  Custom View Article link to Post
 //  RU: Добавляем "Читать дальше" к обрезанным записям
-/*
+
 function html5_blank_view_article($more) {
   global $post;
-  return '... <!-- noindex --><a rel="nofollow" class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'wpeasy') . '</a><!-- /noindex -->';
+  return '... <!-- noindex --><a rel="nofollow" class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'wpeasy') . '<i class="fa fa-chevron-right"></i></a><!-- /noindex -->';
 }
 add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-*/
+
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 function my_wp_nav_menu_args($args = '') {
@@ -688,6 +688,147 @@ function disable_emojicons_tinymce( $plugins ) {
   } else {
     return array();
   }
+}
+
+add_action( 'init', 'register_cpts_hoster' );
+function register_cpts_hoster() {
+	/**
+	 * Post Type: hosters.
+	*/
+
+  $labels = array(
+	'name' => __( 'Hosters', 'wpeasy' ),
+    'singular_name' => __( 'Hoster', 'wpeasy' ),
+    'add_new' => __( 'Add', 'wpeasy' ),
+    'add_new_item' => __( 'Add', 'wpeasy' ),
+    'edit' => __( 'Edit', 'wpeasy' ),
+    'edit_item' => __( 'Edit', 'wpeasy' ),
+    'new-item' => __( 'Add', 'wpeasy' ),
+    'view' => __( 'View', 'wpeasy' ),
+    'view' => __( 'View', 'wpeasy' ),
+    'search_items' => __( 'Search', 'wpeasy' ),
+    'not_found' => __( 'Not Found', 'wpeasy' ),
+    'not_found_in_trash' => __( 'Not Found', 'wpeasy' ),
+    'parent' => __( 'Not Parent', 'wpeasy' )
+	);
+
+	$args = array(
+		'label' => __( 'Hosters', 'wpeasy' ),
+		'labels' => $labels,
+		'description' => '',
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'delete_with_user' => false,
+		'show_in_rest' => true,
+		'rest_base' => '',
+		'rest_controller_class' => 'WP_REST_Posts_Controller',
+		'has_archive' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'exclude_from_search' => false,
+		'capability_type' => 'post',
+		'map_meta_cap' => true,
+		'hierarchical' => false,
+		'query_var' => true,
+		'menu_position' => 3,
+    'menu_icon' => 'dashicons-cloud',
+    // https://developer.wordpress.org/resource/dashicons/
+    'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+    'rewrite' => array( 'slug' => 'hoster', 'with_front' => false ),
+	);
+
+	register_post_type( 'hoster', $args );
+}
+
+add_action( 'init', 'register_taxes_virtualization' );
+function register_taxes_virtualization() {
+	/**
+	 * Taxonomy: Virtualization. Like Tags
+	*/
+	$labels = array(
+		'name' => __( 'Virtualization', 'wpeasy' ),
+    'singular_name' => __( 'Property', 'wpeasy' ),
+    'menu_name' => __( 'Virtualization', 'wpeasy' ),
+    'search_items' => __( 'Search', 'wpeasy' ),
+    'all_items' => __( 'All', 'wpeasy' ),
+    'parent_item' => __( 'Parent', 'wpeasy' ),
+    'parent_item_colon' => __( 'Parent', 'wpeasy' ),
+    'edit_item' => __( 'Edit', 'wpeasy' ),
+    'update_item' => __( 'Update', 'wpeasy' ),
+    'add_new_item' => __( 'Add', 'wpeasy' ),
+    'new_item_name' => __( 'New', 'wpeasy' ),
+    'popular_items' => __( 'Popular', 'wpeasy' ),
+    'separate_items_with_commas' => __( 'Separate items with comas', 'wpeasy' ),
+    'add_or_remove_items' => __( 'Add or remove', 'wpeasy' ),
+    'choose_from_most_used' => __( 'Choose from the most used', 'wpeasy' ),
+    'not_found' => __( 'No found', 'wpeasy' ),
+	);
+
+	$args = array(
+		'label' => __( 'Virtualization', 'wpeasy' ),
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'hierarchical' => false,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'query_var' => true,
+		'show_admin_column' => true,
+    'show_in_rest' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_quick_edit' => false,
+    'rest_base' => 'virtualization',
+    'rewrite' => array( 'slug' => 'virtualization', 'with_front' => true, ),
+		);
+	register_taxonomy( 'virtualization', array( 'hoster' ), $args );
+}
+
+add_action( 'init', 'register_taxes_os' );
+function register_taxes_os() {
+	/**
+	 * Taxonomy: OS. Like Tags
+	*/
+	$labels = array(
+		'name' => __( 'OS', 'wpeasy' ),
+    'singular_name' => __( 'Property', 'wpeasy' ),
+    'menu_name' => __( 'OS', 'wpeasy' ),
+    'search_items' => __( 'Search', 'wpeasy' ),
+    'all_items' => __( 'All', 'wpeasy' ),
+    'parent_item' => __( 'Parent', 'wpeasy' ),
+    'parent_item_colon' => __( 'Parent', 'wpeasy' ),
+    'edit_item' => __( 'Edit', 'wpeasy' ),
+    'update_item' => __( 'Update', 'wpeasy' ),
+    'add_new_item' => __( 'Add', 'wpeasy' ),
+    'new_item_name' => __( 'New', 'wpeasy' ),
+    'popular_items' => __( 'Popular', 'wpeasy' ),
+    'separate_items_with_commas' => __( 'Separate items with comas', 'wpeasy' ),
+    'add_or_remove_items' => __( 'Add or remove', 'wpeasy' ),
+    'choose_from_most_used' => __( 'Choose from the most used', 'wpeasy' ),
+    'not_found' => __( 'No found', 'wpeasy' ),
+	);
+
+	$args = array(
+		'label' => __( 'OS', 'wpeasy' ),
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'hierarchical' => false,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'query_var' => true,
+		'show_admin_column' => true,
+    'show_in_rest' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_quick_edit' => false,
+    'rest_base' => 'os',
+    'rewrite' => array( 'slug' => 'os', 'with_front' => true, ),
+		);
+	register_taxonomy( 'os', array( 'hoster' ), $args );
 }
 
 ?>
