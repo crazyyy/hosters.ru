@@ -104,7 +104,8 @@ header {
     height: 75px;
   }
 
-  .header--logo {
+  .header--logo,
+  .header--logo a{
     display: block;
     display: flex;
     align-content: flex-start;
@@ -113,7 +114,6 @@ header {
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .header--title {
     width: 180px;
 
@@ -125,7 +125,6 @@ header {
     font-size: 24px;
     font-weight: bold;
     line-height: 1;
-
     span {
       color: $black;
     }

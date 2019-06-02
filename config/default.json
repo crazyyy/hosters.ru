@@ -1,6 +1,6 @@
 {
-  "domain": "wp-framework.dev",
-  "theme": "wp-framework",
+  "domain": "hostingrank.local",
+  "theme": "wp-hostingrank",
   "path": {
     "base": {
       "src":"assets/",
