@@ -6,7 +6,7 @@
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="footer-widget footer-widget--1 col-xl-3">
+      <div class="footer-widget footer-widget--1 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <h6>Особенности</h6>
         <ul>
           <li><a href="">Хостинг с тестовым периодом</a></li>
@@ -17,7 +17,7 @@
         </ul>
       </div>
       <!-- /.footer-widget footer-widget--1 col-xl-3 -->
-      <div class="footer-widget footer-widget--2 col-xl-3">
+      <div class="footer-widget footer-widget--2 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <h6>Местоположение хостинга</h6>
         <ul>
           <li><a href="">Русский</a></li>
@@ -29,7 +29,7 @@
         </ul>
       </div>
       <!-- /.footer-widget footer-widget--2 col-xl-3 -->
-      <div class="footer-widget footer-widget--paymethods col-xl-3">
+      <div class="footer-widget footer-widget--paymethods col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <h6>Способы оплаты</h6>
         <ul>
           <li><a href="">webmoney</a></li>
@@ -38,7 +38,7 @@
         </ul>
       </div>
       <!-- /.footer-widget footer-widget--3 col-xl-3 -->
-      <div class="footer-widget footer-widget--4 col-xl-3">
+      <div class="footer-widget footer-widget--4 col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <h6>Разное</h6>
         <ul>
           <li><a href="">Облачный хостинг</a></li>

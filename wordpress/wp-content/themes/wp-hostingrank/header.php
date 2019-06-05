@@ -28,7 +28,7 @@
   <header role="banner">
     <div class="container">
       <div class="row">
-        <div class="header--logo col-xl-3 col-lg-3 col-md-3 col-sm-3">
+        <div class="header--logo col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
           <?php if ( !is_front_page() && !is_home() ){ ?>
             <a href="<?php echo home_url(); ?>">
           <?php } ?>
@@ -38,10 +38,10 @@
             </a>
           <?php } ?>
         </div><!-- /header--logo -->
-        <div class="header--currency col-xl-2 col-lg-3 col-md-3 col-sm-6 offset-xl-5 offset-lg-3 offset-md-3 offset-sm-3">
+        <div class="header--currency col-xl-2 col-lg-3 col-md-3 col-sm-6 col-xs-6 offset-xl-5 offset-lg-3 offset-md-3">
             Валюта <span>RUB</span>
         </div>
-        <div class="header--contact col-xl-2 col-lg-3 col-md-3 col-sm-3">
+        <div class="header--contact col-xl-2 col-lg-3 col-md-3 col-sm-6 col-xs-6">
           <a href="/contacts">Напишите нам <i class="fa fa-envelope"></i></a>
         </div>
         <!-- /.header--contact col-xl-1 col-lg-2 col-md-2 col-sm-3 -->

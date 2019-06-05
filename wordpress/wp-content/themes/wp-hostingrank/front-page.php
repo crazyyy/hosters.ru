@@ -1,6 +1,10 @@
 <?php /* Template Name: Home Page */ get_header(); ?>
 
-    <aside class="sidebar whatisit col-md-4" role="complementary">
+<div class="container">
+
+  <div class="row">
+
+    <aside class="sidebar whatisit col-xl-4 col-lg-4 col-md-12" role="complementary">
       <div class="whatisit--what">
         <h6>Что такое <span>хостинг?</span></h6>
         <p>Хостинг - это услуга, позволяющая разместить веб-сайт в интернете.</p>
@@ -30,7 +34,7 @@
       </div>
     </aside><!-- /sidebar -->
 
-    <div class="home-rating col-md-8">
+    <div class="home-rating col-md-8 col-lg-8 col-md-12">
       <div class="home-rating--title">
         <h1>Рейтинг Хостингов: <span>Май 2019</span></h1>
         <p>Рейтинг хостинг провайдеров, составленный по результатам быстродействия, UpTime и отзывам пользователей.</p>
@@ -76,8 +80,11 @@
         <!-- /.rating-item--bottom -->
       </div>
       <!-- /.rating-item -->
-
     </div><!-- /.home-rating -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
 
     <div class="rookie col-xl-12 col-lg-12 col-md-12 col-sm-12">
       <h3 class="rookie--title"><span>Я новичок</span></h3>
@@ -191,11 +198,6 @@
     </div>
     <!-- /.rookie col-xl-12 col-lg-12 col-md-12 col-sm-12 -->
 
-    <div class="globe col-xl-12">
-      <h3 class="globe--title"><span>География хостинг-провайдеров</span></h3>
-    </div>
-    <!-- /.globe col-xl-12 -->
-
     <div class="cmshost col-xl-12 col-lg-12 col-md-12">
       <h3 class="cmshost--title"><span>CMS-хостинг</span></h3>
       <div class="row">
@@ -263,13 +265,13 @@
     </div>
     <!-- /.cmshost col-xl-12 col-lg-12 col-md-12 -->
 
-    <div class="contenter contenter--gray contenter--whatvps col-xl-4 col-lg-4">
+    <div class="contenter contenter--gray contenter--whatvps col-xl-4 col-lg-4 col-md-5">
       <h6>Что такое <span>VPS?</span> </h6>
       <a href="" class="contenter--more">Рейтинг VPS-провайдеров <i class="fa fa-chevron-right"></i></a>
     </div>
     <!-- /.contenter contenter--gray contenter--whatvps col-xl-4 -->
 
-    <div class="contenter contenter--orange col-xl-8 col-lg-8 col-md-8">
+    <div class="contenter contenter--orange col-xl-8 col-lg-8 col-md-7">
       <h6>Данную услугу выбирают опытные пользователи.</h6>
       <p>VPS (или VDS) расшифровывается как виртуальный выделенный сервер.</p>
       <p>Провайдер дает вам безграничные возможности в администрировании собственного виртуального сервера, при том его стоимость (впрочем, как и мощность) будет невысокой.</p>
@@ -324,34 +326,34 @@
     <div class="domain-line">
       <div class="container">
         <div class="row">
-          <div class="domain-line--item col-xl-2">
+          <div class="domain-line--item col-xl-2 col-lg-3">
             <a href="" class="domain-item--title">домен .TRAVEL</a>
             <p>Сайт о путешествиях?</p>
             <p>Домен .TRAVEL дороговат, но выбор свободных имен огромен!</p>
             <span class="domain-item--price">Цена: <span>от 3 805 ₽</span></span>
           </div>
           <!-- /.domain-line--item col-xl-2 -->
-          <div class="domain-line--item col-xl-2">
+          <div class="domain-line--item col-xl-2 col-lg-3">
             <a href="" class="domain-item--title">домен .РФ</a>
             <span class="domain-item--price">Цена: от <span>3 805 ₽</span></span>
           </div>
           <!-- /.domain-line--item col-xl-1 -->
-          <div class="domain-line--item col-xl-2">
+          <div class="domain-line--item col-xl-2 col-lg-3">
             <a href="" class="domain-item--title">домен .ASIA</a>
           </div>
           <!-- /.domain-line--item col-xl-1 -->
-          <div class="domain-line--item col-xl-2">
+          <div class="domain-line--item col-xl-2 col-lg-3">
             <a href="" class="domain-item--title">домен .NAME</a>
             <span class="domain-item--price">Цена: от <span>537 ₽</span></span>
           </div>
           <!-- /.domain-line--item col-xl-1 -->
-          <div class="domain-line--item col-xl-2">
+          <div class="domain-line--item col-xl-2 col-lg-6">
             <a href="" class="domain-item--title">домен .DJ</a>
             <p>Идеален для людей, занимающихся музыкой. Вообще, домен .DJ принадлежит небольшой республике Джибути, однако, в основном его используют музыкальные сайты.</p>
             <span class="domain-item--price">Цена: от <span>5 558 ₽</span></span>
           </div>
           <!-- /.domain-line--item col-xl-4 -->
-          <div class="domain-line--item col-xl-2">
+          <div class="domain-line--item col-xl-2 col-lg-6">
             <a href="" class="domain-item--title domain-item--more">еще 704 домена<i class="fa fa-chevron-right"></i></a>
           </div>
           <!-- /.domain-line--item col-xl-3 -->

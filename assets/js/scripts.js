@@ -47,8 +47,31 @@ if (typeof jQuery === "undefined") {
 }
 // Place any jQuery/helper plugins in here.
 $(document).ready(function () {
+  let isMobile;
+  if ($(window).width() >= 576) {
+    isMobile = false;
+  } else {
+    isMobile = true;
+  }
+
   $.each($('.headnav a'), function (indexInArray, valueOfElement) {
     let content = `<span>123 s</span>`;
     $(this).append(content);
   });
+
+  if(isMobile) {
+    let $headerNavContainer = $('.header--nav');
+
+    $headerNavContainer.on('click', function(e) {
+      e.preventDefault();
+      $headerNavContainer.toggleClass('header--nav__opened')
+    })
+
+  }
+
+
+
+
+
+
 });
