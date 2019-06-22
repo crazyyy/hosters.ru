@@ -69,6 +69,8 @@ $(document).ready(function () {
 
   }
 
+  $('p[style="padding-left: 40px;"]').addClass('blockquote-light')
+
 
 
 

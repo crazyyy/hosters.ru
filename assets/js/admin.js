@@ -21,3 +21,29 @@ if (typeof jQuery === 'undefined') {
   console.log('jQuery has loaded');
 }
 // Place any jQuery/helper plugins in here.
+$(document).ready(function () {
+
+  if ($('body').hasClass('post-type-hoster')) {
+    let selected_template = $('#post_template').val();
+    ToggleMetaBox(selected_template);
+
+    $('#post_template').change(function() {
+      let selected_template = $('#post_template').val();
+      ToggleMetaBox(selected_template);
+    });
+
+  }
+
+  function ToggleMetaBox(selected_template) {
+    let arrMetaBoxName = ['#tagsdiv-virtualization', '#tagsdiv-os', '#tagsdiv-paymethods', '#tagsdiv-country', '#tagsdiv-conpan', '#tagsdiv-processor'];
+    $.each(arrMetaBoxName, function (indexInArray, valueOfElement) {
+      if (selected_template === 'default') {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  }
+
+
+});

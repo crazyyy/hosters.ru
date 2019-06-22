@@ -34,7 +34,7 @@
       </div>
     </aside><!-- /sidebar -->
 
-    <div class="home-rating col-md-8 col-lg-8 col-md-12">
+    <div class="home-rating col-xl-8 col-lg-8 col-md-12">
       <div class="home-rating--title">
         <h1>Рейтинг Хостингов: <span>Май 2019</span></h1>
         <p>Рейтинг хостинг провайдеров, составленный по результатам быстродействия, UpTime и отзывам пользователей.</p>

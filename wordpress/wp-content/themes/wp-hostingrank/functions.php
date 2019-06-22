@@ -729,17 +729,38 @@ function register_cpts_hoster() {
 		'exclude_from_search' => false,
 		'capability_type' => 'post',
 		'map_meta_cap' => true,
-		'hierarchical' => false,
+		'hierarchical' => true,
 		'query_var' => true,
 		'menu_position' => 3,
     'menu_icon' => 'dashicons-cloud',
     // https://developer.wordpress.org/resource/dashicons/
-    'supports' => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+    'supports' => array( 'title', 'editor', 'thumbnail', 'revisions', 'page-attributes', 'post-formats' ),
     'rewrite' => array( 'slug' => 'hoster', 'with_front' => false ),
 	);
 
 	register_post_type( 'hoster', $args );
 }
+
+// // Remove slud
+// // https://wordpress.stackexchange.com/questions/203951/remove-slug-from-custom-post-type-post-urls
+// add_filter( 'post_type_link', 'na_remove_slug', 10, 3 );
+// function na_remove_slug( $post_link, $post, $leavename ) {
+//   if ( 'hoster' != $post->post_type || 'publish' != $post->post_status ) {
+//     return $post_link;
+//   }
+//   $post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
+//   return $post_link;
+// }
+// add_action( 'pre_get_posts', 'na_parse_request' );
+// function na_parse_request( $query ) {
+//   if ( ! $query->is_main_query() || 2 != count( $query->query ) || ! isset( $query->query['page'] ) ) {
+//     return;
+//   }
+//   if ( ! empty( $query->query['name'] ) ) {
+//     $query->set( 'post_type', array( 'post', 'hoster', 'page' ) );
+//   }
+// }
+
 
 add_action( 'init', 'register_taxes_virtualization' );
 function register_taxes_virtualization() {
@@ -748,7 +769,7 @@ function register_taxes_virtualization() {
 	*/
 	$labels = array(
 		'name' => __( 'Virtualization', 'wpeasy' ),
-    'singular_name' => __( 'Property', 'wpeasy' ),
+    'singular_name' => __( 'Virtualization', 'wpeasy' ),
     'menu_name' => __( 'Virtualization', 'wpeasy' ),
     'search_items' => __( 'Search', 'wpeasy' ),
     'all_items' => __( 'All', 'wpeasy' ),
@@ -793,7 +814,7 @@ function register_taxes_os() {
 	*/
 	$labels = array(
 		'name' => __( 'OS', 'wpeasy' ),
-    'singular_name' => __( 'Property', 'wpeasy' ),
+    'singular_name' => __( 'OS', 'wpeasy' ),
     'menu_name' => __( 'OS', 'wpeasy' ),
     'search_items' => __( 'Search', 'wpeasy' ),
     'all_items' => __( 'All', 'wpeasy' ),
@@ -830,5 +851,186 @@ function register_taxes_os() {
 		);
 	register_taxonomy( 'os', array( 'hoster' ), $args );
 }
+
+add_action( 'init', 'register_taxes_paymethods' );
+function register_taxes_paymethods() {
+	/**
+	 * Taxonomy: Paymethods. Like Tags
+	*/
+	$labels = array(
+		'name' => __( 'Paymethods', 'wpeasy' ),
+    'singular_name' => __( 'Paymethod', 'wpeasy' ),
+    'menu_name' => __( 'Paymethods', 'wpeasy' ),
+    'search_items' => __( 'Search', 'wpeasy' ),
+    'all_items' => __( 'All', 'wpeasy' ),
+    'parent_item' => __( 'Parent', 'wpeasy' ),
+    'parent_item_colon' => __( 'Parent', 'wpeasy' ),
+    'edit_item' => __( 'Edit', 'wpeasy' ),
+    'update_item' => __( 'Update', 'wpeasy' ),
+    'add_new_item' => __( 'Add', 'wpeasy' ),
+    'new_item_name' => __( 'New', 'wpeasy' ),
+    'popular_items' => __( 'Popular', 'wpeasy' ),
+    'separate_items_with_commas' => __( 'Separate items with comas', 'wpeasy' ),
+    'add_or_remove_items' => __( 'Add or remove', 'wpeasy' ),
+    'choose_from_most_used' => __( 'Choose from the most used', 'wpeasy' ),
+    'not_found' => __( 'No found', 'wpeasy' ),
+	);
+
+	$args = array(
+		'label' => __( 'Paymethods', 'wpeasy' ),
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'hierarchical' => false,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'query_var' => true,
+		'show_admin_column' => true,
+    'show_in_rest' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_quick_edit' => false,
+    'rest_base' => 'paymethods',
+    'rewrite' => array( 'slug' => 'paymethods', 'with_front' => true, ),
+		);
+	register_taxonomy( 'paymethods', array( 'hoster' ), $args );
+}
+
+add_action( 'init', 'register_taxes_country' );
+function register_taxes_country() {
+	/**
+	 * Taxonomy: Country. Like Tags
+	*/
+	$labels = array(
+		'name' => __( 'Country', 'wpeasy' ),
+    'singular_name' => __( 'Country', 'wpeasy' ),
+    'menu_name' => __( 'Country', 'wpeasy' ),
+    'search_items' => __( 'Search', 'wpeasy' ),
+    'all_items' => __( 'All', 'wpeasy' ),
+    'parent_item' => __( 'Parent', 'wpeasy' ),
+    'parent_item_colon' => __( 'Parent', 'wpeasy' ),
+    'edit_item' => __( 'Edit', 'wpeasy' ),
+    'update_item' => __( 'Update', 'wpeasy' ),
+    'add_new_item' => __( 'Add', 'wpeasy' ),
+    'new_item_name' => __( 'New', 'wpeasy' ),
+    'popular_items' => __( 'Popular', 'wpeasy' ),
+    'separate_items_with_commas' => __( 'Separate items with comas', 'wpeasy' ),
+    'add_or_remove_items' => __( 'Add or remove', 'wpeasy' ),
+    'choose_from_most_used' => __( 'Choose from the most used', 'wpeasy' ),
+    'not_found' => __( 'No found', 'wpeasy' ),
+	);
+
+	$args = array(
+		'label' => __( 'Country', 'wpeasy' ),
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'hierarchical' => false,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'query_var' => true,
+		'show_admin_column' => true,
+    'show_in_rest' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_quick_edit' => false,
+    'rest_base' => 'country',
+    'rewrite' => array( 'slug' => 'country', 'with_front' => true, ),
+		);
+	register_taxonomy( 'country', array( 'hoster' ), $args );
+}
+
+add_action( 'init', 'register_taxes_panel' );
+function register_taxes_panel() {
+	/**
+	 * Taxonomy: Control Panel. Like Tags
+	*/
+	$labels = array(
+		'name' => __( 'Control Panel', 'wpeasy' ),
+    'singular_name' => __( 'Control Panel', 'wpeasy' ),
+    'menu_name' => __( 'Control Panel', 'wpeasy' ),
+    'search_items' => __( 'Search', 'wpeasy' ),
+    'all_items' => __( 'All', 'wpeasy' ),
+    'parent_item' => __( 'Parent', 'wpeasy' ),
+    'parent_item_colon' => __( 'Parent', 'wpeasy' ),
+    'edit_item' => __( 'Edit', 'wpeasy' ),
+    'update_item' => __( 'Update', 'wpeasy' ),
+    'add_new_item' => __( 'Add', 'wpeasy' ),
+    'new_item_name' => __( 'New', 'wpeasy' ),
+    'popular_items' => __( 'Popular', 'wpeasy' ),
+    'separate_items_with_commas' => __( 'Separate items with comas', 'wpeasy' ),
+    'add_or_remove_items' => __( 'Add or remove', 'wpeasy' ),
+    'choose_from_most_used' => __( 'Choose from the most used', 'wpeasy' ),
+    'not_found' => __( 'No found', 'wpeasy' ),
+	);
+
+	$args = array(
+		'label' => __( 'Control Panel', 'wpeasy' ),
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'hierarchical' => false,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'query_var' => true,
+		'show_admin_column' => true,
+    'show_in_rest' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_quick_edit' => false,
+    'rest_base' => 'conpan',
+    'rewrite' => array( 'slug' => 'conpan', 'with_front' => true, ),
+		);
+	register_taxonomy( 'conpan', array( 'hoster' ), $args );
+}
+
+add_action( 'init', 'register_taxes_processor' );
+function register_taxes_processor() {
+	/**
+	 * Taxonomy: Processor. Like Tags
+	*/
+	$labels = array(
+		'name' => __( 'Processor', 'wpeasy' ),
+    'singular_name' => __( 'Processor', 'wpeasy' ),
+    'menu_name' => __( 'Processor', 'wpeasy' ),
+    'search_items' => __( 'Search', 'wpeasy' ),
+    'all_items' => __( 'All', 'wpeasy' ),
+    'parent_item' => __( 'Parent', 'wpeasy' ),
+    'parent_item_colon' => __( 'Parent', 'wpeasy' ),
+    'edit_item' => __( 'Edit', 'wpeasy' ),
+    'update_item' => __( 'Update', 'wpeasy' ),
+    'add_new_item' => __( 'Add', 'wpeasy' ),
+    'new_item_name' => __( 'New', 'wpeasy' ),
+    'popular_items' => __( 'Popular', 'wpeasy' ),
+    'separate_items_with_commas' => __( 'Separate items with comas', 'wpeasy' ),
+    'add_or_remove_items' => __( 'Add or remove', 'wpeasy' ),
+    'choose_from_most_used' => __( 'Choose from the most used', 'wpeasy' ),
+    'not_found' => __( 'No found', 'wpeasy' ),
+	);
+
+	$args = array(
+		'label' => __( 'Processor', 'wpeasy' ),
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'hierarchical' => false,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'show_in_nav_menus' => true,
+		'query_var' => true,
+		'show_admin_column' => true,
+    'show_in_rest' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'rest_controller_class' => 'WP_REST_Terms_Controller',
+    'show_in_quick_edit' => false,
+    'rest_base' => 'processor',
+    'rewrite' => array( 'slug' => 'processor', 'with_front' => true, ),
+		);
+	register_taxonomy( 'processor', array( 'hoster' ), $args );
+}
+
 
 ?>

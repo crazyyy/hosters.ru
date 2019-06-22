@@ -1243,8 +1243,8 @@ nav {
     a {
       display: block;
 
-      padding: 3px 7px;
       margin-bottom: 10px;
+      padding: 3px 7px;
 
       color: #fff;
       border-radius: 3px;
@@ -1631,8 +1631,12 @@ article {
       }
     }
   }
+  p {
+    margin-bottom: 14px;
+  }
   ol,
   ul {
+    margin-bottom: 14px;
     padding-left: 30px;
 
     list-style: none;
@@ -1672,12 +1676,23 @@ article {
     }
     td {
       padding: 5px;
+
       border-bottom: 1px solid lighten($orange, 25%);
     }
     tr {
       &:nth-child(even) {
         background-color: lighten($orange, 35%);
       }
+    }
+  }
+  img {
+    max-width: 100%;
+
+    opacity: 0.9;
+    &:hover {
+      opacity: 1;
+      border-radius: 3px;
+      box-shadow: $base-box-shadow;
     }
   }
   .breadcrumbs {
@@ -1705,27 +1720,435 @@ article {
       color: $black;
     }
   }
+  &.type-hoster {
+    .article-thumbnail {
+      float: left;
+
+      width: 120px;
+      margin: 10px;
+
+      opacity: 1;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    .inner-title {
+      font-size: 30px;
+    }
+    h2,h3,h4,h5 {
+      margin-bottom: 12px;
+
+      color: $orange;
+
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 21px;
+    }
+    h3 {
+      font-size: 19px;
+      strong {
+        color: $base-font-color;
+
+        font-size: 80%;
+        font-weight: normal;
+      }
+    }
+    h4 {
+      font-size: 18px;
+    }
+    h5 {
+      font-size: 17px;
+    }
+    blockquote {
+      padding: 15px;
+
+      border: 2px solid $orange;
+      border-radius: 3px;
+      background-color: lighten($orange, 35%);
+    }
+    .blockquote-light{
+      margin: 0;
+
+      background-color: lighten($orange, 25%);
+    }
+
+    *:not(.blockquote-light) + .blockquote-light{
+      padding: 20px 20px 10px !important;
+    }
+    .blockquote-light ~ .blockquote-light {
+      padding: 10px 20px !important;
+    }
+    .blockquote-light + *:not(.blockquote-light) {
+      margin-top: 14px;
+    }
+
+  }
+}
+
+.hoster-quote {
+  padding: 10px;
+
+  border-radius: 5px;
+  background-color: lighten($orange, 35%);
+
+  font-size: 80%;
+	span {
+    display: block;
+
+    text-align: right;
+
+    font-weight: bold;
+	}
+}
+
+.country-be {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/blr.png);
+      background-image: url(../img/flags/blr.svg);
+    }
+  }
+}
+.country-fr {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/fra.png);
+      background-image: url(../img/flags/fra.svg);
+    }
+  }
+}
+.country-fi {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/fin.png);
+      background-image: url(../img/flags/fin.svg);
+    }
+  }
+}
+.country-ua {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/ukr.png);
+      background-image: url(../img/flags/ukr.svg);
+    }
+  }
+}
+.country-us {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/usa.png);
+      background-image: url(../img/flags/usa.svg);
+    }
+  }
+}
+.country-ru {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/rus.png);
+      background-image: url(../img/flags/rus.svg);
+    }
+  }
+}
+.country-pl {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/pol.png);
+      background-image: url(../img/flags/pol.svg);
+    }
+  }
+}
+.country-md {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/mda.png);
+      background-image: url(../img/flags/mda.svg);
+    }
+  }
+}
+// Люксембург
+.country-lx {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/lux.png);
+      background-image: url(../img/flags/lux.svg);
+    }
+  }
+}
+// Нидерланды
+.country-nd {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/nld.png);
+      background-image: url(../img/flags/nld.svg);
+    }
+  }
+}
+// Латвия
+.country-lt {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/ltu.png);
+      background-image: url(../img/flags/ltu.svg);
+    }
+  }
+}
+// Киргизия
+.country-kg {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/kgz.png);
+      background-image: url(../img/flags/kgz.svg);
+    }
+  }
+}
+.country-ca {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/can.png);
+      background-image: url(../img/flags/can.svg);
+    }
+  }
+}
+.country-kz {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/kaz.png);
+      background-image: url(../img/flags/kaz.svg);
+    }
+  }
+}
+.country-eu {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/eur.png);
+      background-image: url(../img/flags/eur.svg);
+    }
+  }
+}
+.country-ge {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/deu.png);
+      background-image: url(../img/flags/deu.svg);
+    }
+  }
+}
+.country-gb {
+	.hoster-summary--country {
+    &:before {
+      background-image: url(../img/flags/png/gbr.png);
+      background-image: url(../img/flags/gbr.svg);
+    }
+  }
+}
+
+.hoster-summary {
+	.hoster-summary--country {
+    margin-bottom: 8px;
+    &:before {
+      display: inline-block;
+
+      width: 15px;
+      height: 15px;
+      margin-right: 8px;
+
+      content: '';
+
+      border: 1px solid #b9b9b9;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+	}
+
+	.hoster-summary--feature {
+    margin-bottom: 4px;
+
+    font-size: 90%;
+		span {
+      display: inline-block;
+
+      padding: 4px 8px;
+
+      color: $base-font-color;
+      border-radius: 3px;
+      background-color: lighten($orange, 35%);
+    }
+    a {
+      color: $base-font-color;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .hoster-summary--super {
+    span {
+      background-color: lighten($orange, 25%);
+
+    }
+  }
+
+	.hoster-summary--paymethods {
+    margin-bottom: 20px;
+    padding: 0;
+    padding-top: 20px;
+		li {
+      display: none;
+
+      height: 30px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+
+      filter: gray;
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+      &:before {
+        display: none;
+      }
+      &:hover {
+        filter: none;
+      }
+		}
+	}
+
+	.hoster-summary--link {
+    display: inline-block;
+
+    margin: 0 auto 20px;
+    padding: 10px;
+
+    color: #38383a;
+    border: 1px solid lighten($orange, 25%);
+    border-radius: 5px;
+    background-color: lighten($orange, 35%);
+
+    font-size: 20px;
+    font-weight: bold;
+		span {
+      color: #9f9f9f;
+
+      font-weight: normal;
+    }
+    &:hover {
+      color: #1f1f1f;
+      border: 1px solid lighten($orange, 15%);
+      background-color: lighten($orange, 25%);
+      span {
+        color: #3b393c;
+
+        font-weight: normal;
+      }
+    }
+	}
+}
+.paymethods-bitcoin {
+  .hoster-summary--paymethods .bitcoin {
+    display: inline-block;
+
+    width: 29px;
+
+    background-image: url(../img/paymethods/bitcoin.png#paymethods);
+  }
+}
+.paymethods-paypal {
+  .hoster-summary--paymethods .paypal {
+    display: inline-block;
+
+    width: 118px;
+
+    background-image: url(../img/paymethods/paypal.png#paymethods);
+  }
+}
+.paymethods-qiwi {
+  .hoster-summary--paymethods .qiwi {
+    display: inline-block;
+
+    width: 82px;
+
+    background-image: url(../img/paymethods/qiwi.png#paymethods);
+  }
+}
+.paymethods-visamc {
+  .hoster-summary--paymethods .visamc {
+    display: inline-block;
+
+    width: 116px;
+
+    background-image: url(../img/paymethods/visamc.png#paymethods);
+  }
+}
+.paymethods-webmoney {
+  .hoster-summary--paymethods .webmoney {
+    display: inline-block;
+
+    width: 115px;
+
+    background-image: url(../img/paymethods/webmoney.png#paymethods);
+  }
+}
+.paymethods-alfaclick {
+  .hoster-summary--paymethods .alfaclick {
+    display: inline-block;
+
+    width: 85px;
+
+    background-image: url(../img/paymethods/alfaclick.png#paymethods);
+  }
+}
+.paymethods-mir {
+  .hoster-summary--paymethods .mir {
+    display: inline-block;
+
+    width: 97px;
+
+    background-image: url(../img/paymethods/mir.png#paymethods);
+  }
+}
+.paymethods-sberbank {
+  .hoster-summary--paymethods .sberbank {
+    display: inline-block;
+
+    width: 155px;
+
+    background-image: url(../img/paymethods/sberbank.png#paymethods);
+  }
+}
+.paymethods-yandexmoney {
+  .hoster-summary--paymethods .yandexmoney {
+    display: inline-block;
+
+    width: 118px;
+
+    background-image: url(../img/paymethods/yandexmoney.png#paymethods);
+  }
 }
 
 .looper {
-  @extend .clearfix;
   margin-bottom: 20px;
+
+  @extend .clearfix;
 	.feature-img {
     float: left;
+    overflow: hidden;
+
     width: 25%;
     margin-right: 10px;
     margin-bottom: 10px;
+
     border-radius: 3px;
-    overflow: hidden;
 		img {
       width: 100%;
 		}
 	}
 	.inner-title {
-    text-align: left;
-    line-height: 1.4;
     margin-bottom: 20px;
+
+    text-align: left;
+
     font-size: 20px;
+    line-height: 1.4;
 		a {
       color: $orange;
       &:hover {
@@ -1735,18 +2158,211 @@ article {
 	}
 }
 
+.sidebar {
+	.sidebar-hoster--title {
+    position: relative;
+
+    display: flex;
+    align-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    height: 60px;
+    padding-right: 70px;
+
+    text-align: right;
+
+    font-size: 26px;
+    font-weight: bold;
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      display: block;
+
+      width: 60px;
+      height: 60px;
+
+      content: '';
+
+      border-radius: 3px;
+      background-color: lighten($orange, 35%);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+    }
+		a {
+      color: $orange;
+
+      font-size: 14px;
+      font-weight: normal;
+      &:hover {
+        text-decoration: underline;
+      }
+		}
+	}
+
+	.sidebar-hoster--rating {
+    margin-bottom: 20px;
+    font-size: 14px;
+    display: block;
+    text-align: right;
+		span {
+      display: inline-block;
+      padding: 4px 6px;
+      background-color: $orange;
+      color: #fff;
+      border-radius: 5px;
+			span {
+        font-weight: bold;
+        display: inline;
+        border-radius: 0;
+        padding: 0;
+			}
+		}
+	}
+
+	.sidebar-hoster--features {
+    .sidebar-hoster--description,
+    .sidebar-hoster--tarifs,
+    .sidebar-hoster--review,
+    .sidebar-hoster--speed,
+    .sidebar-hoster--uptime,
+    .sidebar-hoster--download,
+    .sidebar-hoster--phpinfo {
+      >span,
+      a {
+        position: relative;
+
+        display: flex;
+        align-content: center;
+        align-items: flex-end;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+        height: 80px;
+        padding-right: 10px;
+
+        text-align: right;
+
+        color: $black;
+        border-right: 80px solid $orange;
+        background-color: lighten($orange, 25%);
+
+        font-size: 14px;
+        font-weight: bold;
+        &:before {
+          position: absolute;
+          top: 6px;
+          right: -74px;
+
+          display: block;
+
+          width: 68px;
+          height: 68px;
+
+          content: '';
+
+          background-repeat: no-repeat;
+          background-position: center;
+          border-radius: 50%;
+          background-color: lighten($orange, 15%);
+          border: 1px solid #000;
+        }
+        &:hover {
+          border-right: 80px solid darken($orange, 10%);
+          background-color: lighten($orange, 35%);
+        }
+        span {
+          display: block;
+
+          font-size: 12px;
+          font-weight: normal;
+          font-style: italic;
+        }
+      }
+    }
+		.sidebar-hoster--description {
+      a {
+        border-radius: 3px 3px 0 0;
+        &:before {
+          background-image: url(../img/sprites/rating-review.png);
+        }
+      }
+		}
+
+		.sidebar-hoster--tarifs {
+      a {
+        &:before {
+          background-image: url(../img/sprites/rating-tarifs.png);
+        }
+      }
+		}
+
+		.sidebar-hoster--review {
+      a {
+        &:before {
+          background-image: url(../img/sprites/rating-review.png);
+        }
+      }
+		}
+
+		.sidebar-hoster--speed {
+      a {
+        &:before {
+          background-image: url(../img/sprites/rating-speed.png);
+        }
+      }
+		}
+
+		.sidebar-hoster--uptime {
+      a {
+        &:before {
+          background-image: url(../img/sprites/rating-uptime.png);
+        }
+      }
+		}
+
+		.sidebar-hoster--download {
+      a {
+        &:before {
+          background-image: url(../img/sprites/rating-download.png);
+        }
+      }
+		}
+
+		.sidebar-hoster--phpinfo {
+      a {
+        border-radius: 0 0 3px 3px;
+        &:before {
+          background-image: url(../img/sprites/rating-phpinfo.png);
+        }
+      }
+		}
+	}
+}
+
 .pagination {
-  font-size: 18px;
-  @extend .clearfix;
-  text-align: center;
-  padding: 14px 0;
   margin-bottom: 20px;
+  padding: 14px 0;
+
+  text-align: center;
+
+  font-size: 18px;
+
+  @extend .clearfix;
   span, a {
     display: inline-block;
-    padding: 3px 7px;
-    border-radius: 3px;
+
     margin: 5px;
+    padding: 3px 7px;
+
     color: $black;
+    border-radius: 3px;
     background-color: #f3f3f3;
     &:hover {
       background-color: darken(#f3f3f3, 20%);
@@ -1756,16 +2372,19 @@ article {
       background-color: transparent;
       &:hover {
         text-decoration: underline;
+
         background-color: transparent;
       }
     }
     &.next {
       float: right;
+
       margin-right: 0;
       padding-right: 0;
     }
     &.prev {
       float: left;
+
       margin-left: 0;
       padding-left: 0;
     }
