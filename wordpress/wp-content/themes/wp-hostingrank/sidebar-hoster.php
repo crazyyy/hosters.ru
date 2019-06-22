@@ -47,7 +47,7 @@
         case "download":
           $subpage_download = true;
           break;
-        case "phpinfo ":
+        case "phpinfo":
           $subpage_phpinfo = true;
           break;
       }

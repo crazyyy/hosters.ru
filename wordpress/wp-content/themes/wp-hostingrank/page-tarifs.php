@@ -10,7 +10,7 @@
 
           <?php include get_template_directory() . '/template-hoster-header.php'; ?>
 
-          <h1 class="single-title inner-title"><span>Конфигурация PHP на серверах <?php echo get_the_title($hoster_ID); ?></span></h1>
+          <h1 class="single-title inner-title"><span>tarifs  серверах <?php echo get_the_title($hoster_ID); ?></span></h1>
 
           <?php the_content(); ?>
           <p>Републикация материала без письменного разрешения автора запрещена.</p>
