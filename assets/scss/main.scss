@@ -2125,6 +2125,89 @@ article {
   }
 }
 
+.phpinfo--container {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  height: 100px;
+  min-height: 210px;
+
+  border: solid 1px #bfbfbf;
+  iframe {
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+
+    text-align: center;
+
+    border: 0;
+    table {
+      width: 100px !important;
+    }
+  }
+  &.phpinfo--container--hq {
+    height: 700px;
+  }
+}
+.phpinfo--container-more {
+  width: 100%;
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+.filelink--container {
+  position: relative;
+
+  min-height: 80px;
+  padding: 14px;
+  padding-left: 86px;
+
+  border-radius: 10px;
+  background-color: $gray-dark;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+  &:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+
+    display: block;
+
+    width: 68px;
+    height: 68px;
+
+    content: '';
+
+    border: 1px solid #000;
+    border-radius: 50%;
+    background-color: $orange;
+    background-image: url(../img/sprites/rating-download.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  p {
+    margin-bottom: 0;
+    color: #fff;
+    span {
+      display: inline-block;
+      padding: 3px 6px;
+      color: #000;
+      font-size: 13px;
+      margin-right: 10px;
+      background-color: lighten($orange, 10%);
+      border-radius: 10px;
+    }
+  }
+}
+
 .looper {
   margin-bottom: 20px;
 
@@ -2206,21 +2289,29 @@ article {
 	}
 
 	.sidebar-hoster--rating {
-    margin-bottom: 20px;
-    font-size: 14px;
     display: block;
+
+    margin-bottom: 20px;
+
     text-align: right;
+
+    font-size: 14px;
 		span {
       display: inline-block;
+
       padding: 4px 6px;
-      background-color: $orange;
+
       color: #fff;
       border-radius: 5px;
+      background-color: $orange;
 			span {
-        font-weight: bold;
         display: inline;
-        border-radius: 0;
+
         padding: 0;
+
+        border-radius: 0;
+
+        font-weight: bold;
 			}
 		}
 	}
@@ -2267,11 +2358,11 @@ article {
 
           content: '';
 
-          background-repeat: no-repeat;
-          background-position: center;
+          border: 1px solid #000;
           border-radius: 50%;
           background-color: lighten($orange, 15%);
-          border: 1px solid #000;
+          background-repeat: no-repeat;
+          background-position: center;
         }
         &:hover {
           border-right: 80px solid darken($orange, 10%);

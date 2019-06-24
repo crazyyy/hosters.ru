@@ -21,6 +21,10 @@
   <![endif]-->
   <!-- css + javascript -->
   <?php wp_head(); ?>
+
+  <script src="https://static.hosters.ru/js/charts.js"></script>
+<script type="text/javascript" src="https://static.hosters.ru/js/rangeSlider.js"></script>
+<link href='https://static.hosters.ru/css/rangeSlider/ion.rangeSlider.css' rel='stylesheet' type='text/css' />
 </head>
 <body <?php body_class(); ?>>
 <!-- wrapper -->

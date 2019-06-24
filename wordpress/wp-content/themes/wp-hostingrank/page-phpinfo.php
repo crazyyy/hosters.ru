@@ -14,10 +14,22 @@
 
           <p>Здесь Вы можете увидеть результат работы функции <strong>PHPinfo()</strong> на сервере хостинга <a href="<?php echo get_post_permalink($hoster_ID); ?>"><?php echo get_the_title($hoster_ID); ?></a>. Информация содержит версию PHP, опции компиляции PHP и его переменные, дополнительные модули, информацию сервера и системы. Эти данные будут полезны, если Вы собираетесь приобрести <strong>хостинг <?php $alt_name = get_field('alt_name', $hoster_ID); if ( $alt_name ) { echo $alt_name; } else { echo get_the_title($hoster_ID); }; ?></strong>, но неуверены в конфигурации PHP.</p>
 
-          <div class="phpinfo--container">
-            <iframe id="framePHP" src="http://hosting-obzor-ru.webtm.ru/phpinfo.php" frameborder="0"></iframe>
-          </div>
-          <!-- /.phpinfo--container -->
+          <?php $phpinfolink = get_field('phpinfo_link'); if ( $phpinfolink ) { ?>
+            <div class="phpinfo--container">
+              <iframe id="framePHP" src="<?php echo $phpinfolink; ?>" frameborder="0"></iframe>
+            </div>
+            <button class="phpinfo--container-more">Подробнее</button>
+            <!-- /.phpinfo--container -->
+
+          <?php } else { ?>
+            <p><strong>Нет данных о конфигурации PHP на хостинге</strong> <a href="<?php echo get_post_permalink($hoster_ID); ?>"><?php echo get_the_title($hoster_ID); ?></a>.</p>
+            TODO
+            TODO
+            TODO
+            TODO
+            <img src="https://monosnap.com/direct/etDm4arzPYQzQ1VtEUvidQ7gM9X9vI" alt="">
+            https://hosters.ru/name.com/phpinfo.html
+          <?php }; ?>
 
         </article>
       <?php endwhile; endif; ?>
