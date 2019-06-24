@@ -8,12 +8,21 @@
     display: inline-block;
     background-image: url("../img/_sprite_svg.svg");
     background-repeat: no-repeat;
-    background-size: 0em 0em;
+    background-size: 63.125em 7.625em;
 }
 
 .no-svg .svgico:before {
     background-image: url("../img/_sprite_svg.png");
 }
+
+
+
+  .svgico.svgico-billing-system-overview:before {
+      background-position: -0.3125em -0.3125em;
+      width: 62.5em;
+      height: 6.950880444856348em;
+  }
+
 
 
 

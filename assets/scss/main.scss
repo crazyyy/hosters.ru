@@ -12,6 +12,73 @@
 @import "sprite_svg";
 @import "sprite_png";
 
+// https://chrisbracco.com/a-simple-css-tooltip/
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+
+  cursor: pointer;
+  /* Hide the tooltip content by default */
+  &:before,
+  &:after {
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    opacity: 0;
+  }
+  /* Position tooltip above the element */
+  &:before {
+    // width: 240px;
+    width: auto;
+    min-width: 160px;
+    margin-bottom: 5px;
+    margin-left: -40px;
+    padding: 3px 5px;
+
+    content: attr(data-tooltip);
+    text-align: center;
+
+    color: #fff;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: hsla(0, 0%, 20%, 0.9);
+
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  /* Triangle hack to make tooltip look like a speech bubble */
+  &:after {
+    width: 0;
+    margin-left: -5px;
+
+    content: " ";
+
+    border-top: 5px solid #000;
+    border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+
+    font-size: 0;
+    line-height: 0;
+  }
+  /* Show tooltip content on hover */
+
+  &:hover {
+    &:before,
+    &:after {
+      visibility: visible;
+
+      opacity: 1;
+    }
+  }
+}
+
 body {
   min-width: 320px;
 
@@ -1784,6 +1851,133 @@ article {
     }
 
   }
+  &.article-tariffs {
+    table {
+      table-layout: auto;
+      td {
+        padding: 2px 5px;
+      }
+      &.tariffs--shared {
+        font-size: 14px;
+        td {
+          vertical-align: middle;
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4){
+            text-align: center;
+            width: 120px;
+          }
+        }
+        .is--unlimited-db {
+          border-bottom: 1px solid lighten($orange, 30%);
+        }
+      }
+    }
+    .price-country {
+      display: inline-block;
+
+      width: 15px;
+      height: 15px;
+      margin-right: 4px;
+
+      content: "";
+      top: 3px;
+
+      border: 1px solid #b9b9b9;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      background-size: cover;
+    }
+    .is--ssl,
+    .is--ssd,
+    .ico-percent {
+      display: inline-block;
+      padding: 0 2px;
+      margin-left: 4px;
+      border-radius: 3px;
+      font-size: 10px;
+      border: 1px solid #000;
+    }
+    .month-price {
+      display: inline-block;
+      text-align: right;
+      width: 80px;
+      font-weight: bold;
+    }
+    .is-yearprice {
+
+    }
+  }
+}
+
+.price-country--be {
+  background-image: url(../img/flags/png/blr.png);
+  background-image: url(../img/flags/blr.svg);
+}
+.price-country--fr {
+  background-image: url(../img/flags/png/fra.png);
+  background-image: url(../img/flags/fra.svg);
+}
+.price-country--fi {
+  background-image: url(../img/flags/png/fin.png);
+  background-image: url(../img/flags/fin.svg);
+}
+.price-country--ua {
+  background-image: url(../img/flags/png/ukr.png);
+  background-image: url(../img/flags/ukr.svg);
+}
+.price-country--us {
+  background-image: url(../img/flags/png/usa.png);
+  background-image: url(../img/flags/usa.svg);
+}
+.price-country--ru {
+  background-image: url(../img/flags/png/rus.png);
+  background-image: url(../img/flags/rus.svg);
+}
+.price-country--pl {
+  background-image: url(../img/flags/png/pol.png);
+  background-image: url(../img/flags/pol.svg);
+}
+.price-country--md {
+  background-image: url(../img/flags/png/mda.png);
+  background-image: url(../img/flags/mda.svg);
+}
+.price-country--lx {
+  background-image: url(../img/flags/png/lux.png);
+  background-image: url(../img/flags/lux.svg);
+}
+.price-country--nd {
+  background-image: url(../img/flags/png/nld.png);
+  background-image: url(../img/flags/nld.svg);
+}
+.price-country--lt {
+  background-image: url(../img/flags/png/ltu.png);
+  background-image: url(../img/flags/ltu.svg);
+}
+.price-country--kg {
+  background-image: url(../img/flags/png/kgz.png);
+  background-image: url(../img/flags/kgz.svg);
+}
+.price-country--ca {
+  background-image: url(../img/flags/png/can.png);
+  background-image: url(../img/flags/can.svg);
+}
+.price-country--kz {
+  background-image: url(../img/flags/png/kaz.png);
+  background-image: url(../img/flags/kaz.svg);
+}
+.price-country--eu {
+  background-image: url(../img/flags/png/eur.png);
+  background-image: url(../img/flags/eur.svg);
+}
+.price-country--ge {
+  background-image: url(../img/flags/png/deu.png);
+  background-image: url(../img/flags/deu.svg);
+}
+.price-country--gb {
+  background-image: url(../img/flags/png/gbr.png);
+  background-image: url(../img/flags/gbr.svg);
 }
 
 .hoster-quote {
@@ -2162,18 +2356,19 @@ article {
 .filelink--container {
   position: relative;
 
+  display: flex;
+  align-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+
   min-height: 80px;
   padding: 14px;
   padding-left: 86px;
 
   border-radius: 10px;
   background-color: $gray-dark;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: flex-start;
-  align-items: flex-start;
   &:before {
     position: absolute;
     top: 6px;
@@ -2195,15 +2390,19 @@ article {
   }
   p {
     margin-bottom: 0;
+
     color: #fff;
     span {
       display: inline-block;
-      padding: 3px 6px;
-      color: #000;
-      font-size: 13px;
+
       margin-right: 10px;
-      background-color: lighten($orange, 10%);
+      padding: 3px 6px;
+
+      color: #000;
       border-radius: 10px;
+      background-color: lighten($orange, 10%);
+
+      font-size: 13px;
     }
   }
 }
