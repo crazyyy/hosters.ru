@@ -109,7 +109,7 @@
             <!-- /.tariffs--featured -->
 
             <div class="mobileScroll">
-              <table class="tariffs--shared">
+              <table class="tariffs--vps">
                 <tr>
                   <th>тариф</th>
                   <th>ОС</th>
@@ -152,7 +152,7 @@
                     </td>
 
                     <td>
-                      <?php if (get_sub_field('processors_count')) { the_sub_field('processors_count'); } ?><?php $processors_count_max = get_sub_field('processors_count'); if ($processors_count_max) { echo ' - ' . $processors_count_max; } ?><i class="ico ico-processors">processors</i><?php $processors_clock_rate = get_sub_field('processors_clock_rate'); if ($processors_clock_rate) { $processors_clock_rate = number_format($processors_clock_rate, 0, ',', '.'); echo $processors_clock_rate . '  ГГц'; } ?><?php $processors_types = get_sub_field('processors_type'); if( $processors_types ): ?>
+                      <?php if (get_sub_field('processors_count')) { the_sub_field('processors_count'); } ?><?php $processors_count_max = get_sub_field('processors_count'); if ($processors_count_max) { echo ' - ' . $processors_count_max; } ?><i class="fa fa-microchip"></i><?php $processors_clock_rate = get_sub_field('processors_clock_rate'); if ($processors_clock_rate) { $processors_clock_rate = number_format($processors_clock_rate, 0, ',', '.'); echo $processors_clock_rate . '  ГГц'; } ?><?php $processors_types = get_sub_field('processors_type'); if( $processors_types ): ?>
                         <?php foreach ($processors_types as $processors_type) { echo '<i class="term-processors term-processors--' . $processors_type->slug . '" data-tooltip="' . $processors_type->description . '">' . $processors_type->slug . '</i>'; }  ?>
                       <?php endif; ?>
                     </td>
@@ -162,8 +162,8 @@
                     </td>
 
                     <td>
-                      <?php if (get_sub_field('hdd_count')) { ?><?php the_sub_field('hdd_count'); ?> - <?php } ?>
-                      <?php the_sub_field('hdd_size'); ?><?php if (get_sub_field('hdd_size_max')) { ?> - <?php the_sub_field('hdd_size_max'); ?><?php } ?> Гб
+                      <?php if (get_sub_field('hdd_count')) { ?><?php the_sub_field('hdd_count'); ?> <?php } ?>
+                      <?php the_sub_field('hdd_size'); ?><?php if (get_sub_field('hdd_size_max')) { ?>-<?php the_sub_field('hdd_size_max'); ?><?php } ?> Гб
                       <?php $ssd = get_sub_field('ssd'); if (($ssd["value"] === 'SSD') || ($ssd["value"] === 'MIX') || ($ssd["value"] === 'NVM')){ ?><i class="ico-ssd-type ico-ssd-type--<?php echo $ssd["value"]; ?>" data-tooltip="<?php echo $ssd["label"]; ?>"><?php echo $ssd["value"]; ?></i><?php } ?>
                     </td>
 

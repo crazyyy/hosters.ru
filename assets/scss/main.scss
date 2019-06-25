@@ -1857,8 +1857,9 @@ article {
       td {
         padding: 2px 5px;
       }
-      &.tariffs--shared {
-        font-size: 14px;
+      &.tariffs--shared,
+      &.tariffs--vps {
+        font-size: 12px;
         td {
           vertical-align: middle;
           &:nth-child(2),
@@ -1868,6 +1869,16 @@ article {
 
             text-align: center;
           }
+        }
+      }
+      &.tariffs--vps {
+        td {
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4){
+            width: auto;
+          }
+
         }
       }
     }
@@ -1917,7 +1928,8 @@ article {
     .ico-percent,
     .is--cloud,
     .is--unfixed,
-    .is--comment {
+    .is--comment,
+    .ico-ssd-type {
       display: inline-block;
 
       margin-left: 4px;
@@ -1943,6 +1955,18 @@ article {
       display: inline-block;
       border: 1px solid $orange;
       margin: 0 3px;
+    }
+    .term-processors {
+      font-size: 8px;
+      padding: 1px;
+      border-radius: 5px;
+      display: inline-block;
+      border: 1px solid $black;
+      margin: 0 3px;
+    }
+    .fa-microchip {
+      margin-left: 3px;
+      margin-right: 3px;
     }
     .discount-coupon {
       padding-left: 0;
