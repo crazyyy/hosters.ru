@@ -28,6 +28,65 @@
 }
 // col-md-# ( ≥768px)
 @include media-breakpoint-down(md) {
+  article.article-tariffs {
+    .mobileScroll {
+      min-width: 100%;
+      z-index: 1;
+      overflow-x: auto;
+      border-radius: 0 5px 5px 0;
+      background: #fff no-repeat;
+      background-image: radial-gradient(ellipse at 100% 35%,#bebebe,#fff 40%);
+      background-position: 100% 0;
+      background-size: 20px 140%;
+    }
+    .tariffs--shared {
+      background: transparent no-repeat;
+      background-image: linear-gradient(to right,white 0%,white 100%);
+      background-position: 100% 0;
+      background-size: 12px 100%;
+
+
+      width: 100%;
+      border-collapse: separate;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      th {
+        font-size: 12px;
+        font-weight: normal;
+      }
+      td {
+        text-align: center;
+        width: auto;
+        &:nth-child(5) {
+          min-width: 180px;
+        }
+      }
+      .price-country {
+        margin-right: 0;
+      }
+      .is--ssl,
+      .is--ssd{
+        margin-right: 0;
+      }
+      .month-price,
+      .is-yearprice {
+        width: auto;
+        text-align: center;
+      }
+      .mobile-block,
+      .is-yearprice {
+        hyphens: none;
+        display: block;
+        word-wrap: break-word;
+      }
+      .mobile-block{
+        min-width: 50px;
+      }
+    }
+  }
+}
+@include media-breakpoint-down(md) {
   body.home nav.header--nav {
     margin-bottom: 20px;
   }

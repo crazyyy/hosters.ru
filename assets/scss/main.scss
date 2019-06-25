@@ -1864,16 +1864,16 @@ article {
           &:nth-child(2),
           &:nth-child(3),
           &:nth-child(4){
-            text-align: center;
             width: 120px;
+
+            text-align: center;
           }
-        }
-        .is--unlimited-db {
-          border-bottom: 1px solid lighten($orange, 30%);
         }
       }
     }
     .price-country {
+      top: 3px;
+
       display: inline-block;
 
       width: 15px;
@@ -1881,7 +1881,6 @@ article {
       margin-right: 4px;
 
       content: "";
-      top: 3px;
 
       border: 1px solid #b9b9b9;
       border-radius: 50%;
@@ -1889,94 +1888,208 @@ article {
       background-position: 50%;
       background-size: cover;
     }
-    .is--ssl,
-    .is--ssd,
-    .ico-percent {
-      display: inline-block;
-      padding: 0 2px;
-      margin-left: 4px;
-      border-radius: 3px;
-      font-size: 10px;
-      border: 1px solid #000;
+    .is--unlimited-sites,
+    .is--unlimited-db {
+      border-bottom: 1px solid lighten($orange, 30%);
     }
     .month-price {
       display: inline-block;
+
+      width: 30%;
+
       text-align: right;
-      width: 80px;
+
       font-weight: bold;
     }
-    .is-yearprice {
 
+    .is-yearprice {
+      display: inline-block;
+
+      width: 50%;
+
+      text-align: right;
+
+      font-size: 12px;
+      font-style: italic;
+    }
+    .is--ssl,
+    .is--ssd,
+    .ico-percent,
+    .is--cloud,
+    .is--unfixed,
+    .is--comment {
+      display: inline-block;
+
+      margin-left: 4px;
+      padding: 0 2px;
+
+      text-align: center;
+
+      border: 1px solid #000;
+      border-radius: 3px;
+
+      font-size: 10px;
+    }
+    .ico-percent {
+      padding: 0 4px 0 2px;
+    }
+    .term-os {
+      padding: 7px;
+      width: 33px;
+      height: 33px;
+      text-align: center;
+      color: $orange;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid $orange;
+      margin: 0 3px;
+    }
+    .discount-coupon {
+      padding-left: 0;
+      margin-bottom: 20px;
+      li {
+        margin-bottom: 10px;
+        &:before {
+          display: none;
+        }
+      }
+      span {
+        position: relative;
+
+        display: inline;
+
+        margin-right: 10px;
+
+        padding: 3px 10px;
+        border-radius: 3px;
+        background-color: lighten($orange, 30%);
+        &:before,
+        &:after {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+
+          display: block;
+
+          width: 8px;
+          height: 8px;
+          margin-top: -4px;
+
+          content: '';
+
+          border-radius: 50%;
+          background-color: #fff;
+        }
+        &:before{
+          left: -4px;
+        }
+        &:after {
+          right: -4px;
+        }
+      }
+    }
+    .tariffs--featured {
+      span {
+        display: inline-block;
+        padding: 2px 5px;
+        margin-right: 2px;
+        margin-bottom: 6px;
+        font-size: 12px;
+        background-color: lighten($orange, 20%);
+      }
+      .tariffs--featured-acount {
+        background-color: lighten($orange, 30%);
+      }
+    }
+    .additional-controlpanel,
+    .additional-moneyback {
+      font-size: 12px;
+      margin-bottom: 4px;
+      span {
+        display: inline-block;
+        padding: 2px 4px;
+        border: 1px solid $black;
+        border-radius: 3px;
+      }
+    }
+    .additional-controlpanel {
+
+    }
+    .additional-moneyback {
+      text-align: right;
+      span {
+
+      }
     }
   }
 }
 
 .price-country--be {
-  background-image: url(../img/flags/png/blr.png);
+  background-image: url(../img/flags/png/blr.png#countryflags);
   background-image: url(../img/flags/blr.svg);
 }
 .price-country--fr {
-  background-image: url(../img/flags/png/fra.png);
+  background-image: url(../img/flags/png/fra.png#countryflags);
   background-image: url(../img/flags/fra.svg);
 }
 .price-country--fi {
-  background-image: url(../img/flags/png/fin.png);
+  background-image: url(../img/flags/png/fin.png#countryflags);
   background-image: url(../img/flags/fin.svg);
 }
 .price-country--ua {
-  background-image: url(../img/flags/png/ukr.png);
+  background-image: url(../img/flags/png/ukr.png#countryflags);
   background-image: url(../img/flags/ukr.svg);
 }
 .price-country--us {
-  background-image: url(../img/flags/png/usa.png);
+  background-image: url(../img/flags/png/usa.png#countryflags);
   background-image: url(../img/flags/usa.svg);
 }
 .price-country--ru {
-  background-image: url(../img/flags/png/rus.png);
+  background-image: url(../img/flags/png/rus.png#countryflags);
   background-image: url(../img/flags/rus.svg);
 }
 .price-country--pl {
-  background-image: url(../img/flags/png/pol.png);
+  background-image: url(../img/flags/png/pol.png#countryflags);
   background-image: url(../img/flags/pol.svg);
 }
 .price-country--md {
-  background-image: url(../img/flags/png/mda.png);
+  background-image: url(../img/flags/png/mda.png#countryflags);
   background-image: url(../img/flags/mda.svg);
 }
 .price-country--lx {
-  background-image: url(../img/flags/png/lux.png);
+  background-image: url(../img/flags/png/lux.png#countryflags);
   background-image: url(../img/flags/lux.svg);
 }
 .price-country--nd {
-  background-image: url(../img/flags/png/nld.png);
+  background-image: url(../img/flags/png/nld.png#countryflags);
   background-image: url(../img/flags/nld.svg);
 }
 .price-country--lt {
-  background-image: url(../img/flags/png/ltu.png);
+  background-image: url(../img/flags/png/ltu.png#countryflags);
   background-image: url(../img/flags/ltu.svg);
 }
 .price-country--kg {
-  background-image: url(../img/flags/png/kgz.png);
+  background-image: url(../img/flags/png/kgz.png#countryflags);
   background-image: url(../img/flags/kgz.svg);
 }
 .price-country--ca {
-  background-image: url(../img/flags/png/can.png);
+  background-image: url(../img/flags/png/can.png#countryflags);
   background-image: url(../img/flags/can.svg);
 }
 .price-country--kz {
-  background-image: url(../img/flags/png/kaz.png);
+  background-image: url(../img/flags/png/kaz.png#countryflags);
   background-image: url(../img/flags/kaz.svg);
 }
 .price-country--eu {
-  background-image: url(../img/flags/png/eur.png);
+  background-image: url(../img/flags/png/eur.png#countryflags);
   background-image: url(../img/flags/eur.svg);
 }
 .price-country--ge {
-  background-image: url(../img/flags/png/deu.png);
+  background-image: url(../img/flags/png/deu.png#countryflags);
   background-image: url(../img/flags/deu.svg);
 }
 .price-country--gb {
-  background-image: url(../img/flags/png/gbr.png);
+  background-image: url(../img/flags/png/gbr.png#countryflags);
   background-image: url(../img/flags/gbr.svg);
 }
 
